@@ -15,9 +15,12 @@ datasource db {
 }
 
 model Event {
-  id          String   @id
-  title       String
+  id          String   @id @default(uuid())
+  title       String   @unique
   description String?
-  date        DateTime
+  date        DateTime @default(now())
   createdAt   DateTime @default(now())
+  userKey     String
+
+  @@unique([title, userKey])
 }

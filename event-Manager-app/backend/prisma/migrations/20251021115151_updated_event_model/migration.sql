@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "public"."Event" ALTER COLUMN "date" SET DEFAULT CURRENT_TIMESTAMP;
